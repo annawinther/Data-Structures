@@ -144,10 +144,8 @@ class DoublyLinkedList:
             return None
         max_value = self.head.value
         current_node = self.head
-        # traverse the list - go over all of the nodes in list
-        while current_node: # as long as we always have one node - loop through
-            if current_node.vale > max_value: # if current node value is greater than the max value
-                max_value = current_node.value # set the max_value to be hat current nodes value and repete!
-            current_node = current_node.next # incrementing to the next node
-        return max_value 
-
+        while current_node:
+            if current_node.value > max_value:
+                max_value = current_node.value
+            current_node = current_node.next
+        return max_value
