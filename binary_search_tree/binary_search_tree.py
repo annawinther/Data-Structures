@@ -51,11 +51,31 @@ class BinarySearchTree:
     # False if it does not
     def contains(self, target):
         # BASE CASE 
-    
+        # if target eqauls the self.value 
+        if target == self.value:
+            # return true
+            return True
+
 
         # LEFT CASE
+        # if the target is less than value
+        if target < self.value:
+            if not self.left:
+                return False
+            else:
+                return self.left.contains(target)
+                
+         # RIGHT CASE
+        if target > self.value:
+            if not self.right:
+                return False
+            else:
+                return self.right.contains(target)
 
-        # RIGHT CASE
+
+     
+
+   
         pass
 
     # Return the maximum value found in the tree
