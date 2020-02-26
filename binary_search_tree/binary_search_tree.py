@@ -22,7 +22,7 @@ class BinarySearchTree:
             # otherise 
             else:
                 # repeat process for the left --> turn around and 
-                self.left.insert(value)
+                return self.left.insert(value)
                 
         # RIGHT CASE
         # check if the new nodes value is greater than or equal to the current nodes value
@@ -34,7 +34,8 @@ class BinarySearchTree:
             # otherwise
             else:
                 # repeat the process for the right
-
+                return self.right.insert(value)
+        
         # Compare root node
             # If lesser go to left child
         # If greater or equal to go to right child
@@ -50,6 +51,7 @@ class BinarySearchTree:
     # False if it does not
     def contains(self, target):
         # BASE CASE 
+    
 
         # LEFT CASE
 
