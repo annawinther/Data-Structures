@@ -22,19 +22,15 @@ class LRUCache:
     key-value pair doesn't exist in the cache.
     """
     def get(self, key):
+        # checking if key is in our storage and setting a node to be the key (accessing the key directly, O(1))
+        # moving the key to the end and returning the value of the key of that node
         if key in self.storage:
             node = self.storage[key]
             self.cache.move_to_end(node)
             return node.value[1]
-            # current = self.cache.head
-            # print(current)
-            # while current.key is not key:
-            #     current = current.next
-
-            # self.cache.move_to_front(current)
-            # return current.value
         else:
             return None
+
     """
     Adds the given key-value pair to the cache. The newly-
     added pair should be considered the most-recently used
@@ -46,8 +42,9 @@ class LRUCache:
     the newly-specified value.
     """
     def set(self, key, value):
-        # create node if key is not found and move to fron
-        # move node to front if key is found
+        # create node if key is not found and move to front
+        # move node to end if key is found
+        # if key is found, update it and move to the end ( most recently used )
         # if its full remove the last node from linked list and dictionary
         # tail is most recently used and head is the least recently used
 
@@ -65,6 +62,7 @@ class LRUCache:
         self.cache.add_to_tail((key, value))
         self.storage[key] = self.cache.tail
         self.size += 1
+  
 
 
 

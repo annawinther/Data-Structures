@@ -8,6 +8,7 @@ class Queue:
         self.size += 1
         print(value)
         self.storage.add_to_tail(value)
+        # runtime complexity is O(1)
     def dequeue(self):
         if self.size > 0:
             self.size -= 1
@@ -18,6 +19,7 @@ class Queue:
             # print('value', value)
     def len(self):
         return len(self.storage)
+
 if __name__ == '__main__':
         q = Queue()
         q.enqueue(100)
