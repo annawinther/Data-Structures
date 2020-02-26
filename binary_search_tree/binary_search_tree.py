@@ -92,14 +92,32 @@ class BinarySearchTree:
     # Call the function `cb` on the value of each node
     # You may use a recursive or iterative approach
     def for_each(self, cb):
-        pass
+    # each node has a value - each node we want every value -> callback(node.value)
+        if not self.left and not self.right:
+            return cb(self.value)
+        else:
+            return (self.left.for_each(cb), self.right.for_each(cb))
+ 
 
     # DAY 2 Project -----------------------
 
     # Print all the values in order from low to high
     # Hint:  Use a recursive, depth first traversal
-    def in_order_print(self, node):
-        pass
+    def in_order_print(self, node): 
+        # find minimun value --> go far left
+        # print the nodes value
+        # move right once and continue left until a new leaf is found. 
+        # print this value
+        # Then repeat until all on left side are printed
+        # base case: if no childern to left print the root
+        current_node = node
+        if current_node.left:
+            self.in_order_print(current_node.left)
+        if current_node.right:
+            self.in_order_print(current_node.right)
+            # at node, move to child - can't move return value
+        # for each node we want to left,
+        
 
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
