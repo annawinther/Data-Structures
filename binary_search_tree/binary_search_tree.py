@@ -64,7 +64,7 @@ class BinarySearchTree:
                 return False
             else:
                 return self.left.contains(target)
-                
+
          # RIGHT CASE
         if target > self.value:
             if not self.right:
@@ -72,18 +72,16 @@ class BinarySearchTree:
             else:
                 return self.right.contains(target)
 
-
-     
-
-   
-        pass
-
     # Return the maximum value found in the tree
     def get_max(self):
         # BASE CASE 
         # if empty tree
             # return none
-        
+        if not self.right:
+            return self.value
+        # return none
+        else:
+            return self.right.get_max()
         # RECURSIVE CASE
         # if there is no right value
             # return the root node value
