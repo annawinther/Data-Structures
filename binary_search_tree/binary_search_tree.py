@@ -87,17 +87,38 @@ class BinarySearchTree:
             # return the root node value
         # otherwise 
             # return get max of the 
-        pass
+
+    # ITERATIVE GET_MAX
+
+    # def get_max(self):
+    # maxVal = self.value
+    # rightTree = self.right
+    # while rightTree != None:
+    #   if rightTree.value > maxVal:
+    #     maxVal = rightTree.value
+    #   rightTree = rightTree.right
+    # return maxVal
+
 
     # Call the function `cb` on the value of each node
     # You may use a recursive or iterative approach
     def for_each(self, cb):
     # each node has a value - each node we want every value -> callback(node.value)
-        if not self.left and not self.right:
-            return cb(self.value)
-        else:
-            return (self.left.for_each(cb), self.right.for_each(cb))
- 
+        cb(self.value)
+        
+        if self.left:
+            self.left.for_each(cb)
+        if self.right:
+            self.right.for_each(cb)
+        # if not self.left and not self.right:
+        #     return cb(self.value)       
+        # if self.left and not self.right:
+        #     return self.left.for_each(cb)
+        # if self.right and not self.left:
+        #     return self.right.for_each(cb)
+        # else:
+        #     return (self.left.for_each(cb), self.right.for_each(cb))
+
 
     # DAY 2 Project -----------------------
 
@@ -110,11 +131,19 @@ class BinarySearchTree:
         # print this value
         # Then repeat until all on left side are printed
         # base case: if no childern to left print the root
-        current_node = node
-        if current_node.left:
-            self.in_order_print(current_node.left)
-        if current_node.right:
-            self.in_order_print(current_node.right)
+
+        # current_node = node
+        # if not self.left and not self.right:
+        #     print(node.value)  
+        if node.left:
+            # return print(node.value)
+            self.in_order_print(node.left)
+        print(node.value)
+        if node.right:
+            self.in_order_print(node.right)
+            # print(node.value)
+    
+
             # at node, move to child - can't move return value
         # for each node we want to left,
         
