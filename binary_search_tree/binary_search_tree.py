@@ -105,11 +105,12 @@ class BinarySearchTree:
     def for_each(self, cb):
     # each node has a value - each node we want every value -> callback(node.value)
         cb(self.value)
-        
+
         if self.left:
             self.left.for_each(cb)
         if self.right:
             self.right.for_each(cb)
+
         # if not self.left and not self.right:
         #     return cb(self.value)       
         # if self.left and not self.right:
@@ -123,7 +124,7 @@ class BinarySearchTree:
     # DAY 2 Project -----------------------
 
     # Print all the values in order from low to high
-    # Hint:  Use a recursive, depth first traversal
+    # Hint:  Use a recursive, depth first traversal DFT
     def in_order_print(self, node): 
         # find minimun value --> go far left
         # print the nodes value
@@ -134,15 +135,19 @@ class BinarySearchTree:
 
         # current_node = node
         # if not self.left and not self.right:
-        #     print(node.value)  
-        if node.left:
-            # return print(node.value)
+        #     print(node.value) 
+        # if node == None: 
+        #     return
+        if node:
             self.in_order_print(node.left)
-        print(node.value)
-        if node.right:
+            print(node.value)
             self.in_order_print(node.right)
-            # print(node.value)
-    
+        #     return print(node.value)
+        # print(node.value)
+        # if node.right:
+        #     self.in_order_print(node.right)
+            # return print(node.value)
+
 
             # at node, move to child - can't move return value
         # for each node we want to left,
@@ -151,6 +156,16 @@ class BinarySearchTree:
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
     def bft_print(self, node):
+        # create an empty queue
+        # add the starting node to the queue
+
+        # iterate over the queue 
+            # set the current queue to the first item in the q
+            # then print the current value
+            # if thecurrent node has a left child
+                # call enque on the current left
+            # if the current node has a right child
+                # call enwueue on the current right
         pass
 
     # Print the value of every node, starting with the given node,
